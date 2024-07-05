@@ -1,5 +1,6 @@
 export type Todo = {
-    id: number;
-    text: string;
-    category: string;
+  id: number
+  text: string
+  category: string
+  checked: boolean
 }

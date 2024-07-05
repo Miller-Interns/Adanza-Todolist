@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useTodoStore } from '../stores/TodoStore'
-import TodoBlock from './TodoBlock.vue'
+import { useTodoStore } from '../stores/todo-store'
+import TodoBlock from './todo-block.vue'
 
 const store = useTodoStore()
 
@@ -17,7 +17,7 @@ function inputTodo() {
 <template>
   <div class="container">
     <div>
-      <h1>{{ category }}</h1>
+      <h2>{{ category }}</h2>
       <form @submit.prevent="inputTodo">
         <input v-model="newTodo" required placeholder="Enter To Do" />
         <button>Add Todo</button>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import TodoCategory from '@/components/TodoCategory.vue'
-import CreateCategory from '@/components/CreateCategory.vue'
+import TodoCategory from '@/components/todo-category.vue'
+import CreateCategory from '@/components/create-category.vue'
 </script>
 
 <template>
@@ -28,16 +28,17 @@ h1 {
 }
 
 .backToHomePage {
+  display: flex;
   float: left;
-  justify-content: right;
+  justify-content: left;
+  align-items: left;
 }
 
 .navbar {
   display: flex;
   float: right;
   justify-self: start;
-  justify-content: right;
-  background: black;
+  background: #0275dd;
   width: 100%;
 }
 </style>

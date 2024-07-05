@@ -1,9 +1,11 @@
 <template>
   <div class="container">
     <div class="Home">
-      <h1> Jorge Adanza</h1>
-      <p>June 28, 2024</p>
-      <button type="button" class="btn btn-outline-success"><RouterLink to="/app">Go To App</RouterLink></button>
+      <h1>Jorge Adanza</h1>
+      <p>July 5, 2024</p>
+      <button type="button" class="btn btn-outline-success">
+        <RouterLink to="/app">Go To App</RouterLink>
+      </button>
     </div>
   </div>
 </template>
@@ -26,9 +28,6 @@
   left: 0;
   top: 0;
   bottom: 0;
-  margin:auto;
+  margin: auto;
 }
-
-
 </style>
-

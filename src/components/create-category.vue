@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useTodoStore } from '../stores/TodoStore'
+import { useTodoStore } from '../stores/todo-store'
 import { ref } from 'vue'
 
 const store = useTodoStore()
@@ -20,6 +20,4 @@ function inputCategory() {
   </div>
 </template>
 
-<style>
-
-</style>
+<style></style>
