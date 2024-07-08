@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/home.vue'
 
-const routeNames = {
+export const routeNames = {
   home: { path: '/', name: 'home', component: HomeView },
   todo: { path: '/app', name: 'app', component: () => import('../views/todo.vue') }
 }

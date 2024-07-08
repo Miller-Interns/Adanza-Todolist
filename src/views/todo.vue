@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import TodoCategory from '@/components/todo-category.vue'
 import CreateCategory from '@/components/create-category.vue'
+import { RouterLink } from 'vue-router'
+import { routeNames } from '../router/index'
+
+const routerLink = routeNames.home.path
 </script>
 
 <template>
   <nav class="navbar">
     <div class="backToHomePage">
-      <button><RouterLink to="/">Back to Home Page</RouterLink></button>
+      <button><RouterLink :to="routerLink">Back to Home Page</RouterLink></button>
     </div>
     <CreateCategory></CreateCategory>
   </nav>

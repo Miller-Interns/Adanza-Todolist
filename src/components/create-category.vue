@@ -19,5 +19,3 @@ function inputCategory() {
     </form>
   </div>
 </template>
-
-<style></style>

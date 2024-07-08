@@ -1,10 +1,17 @@
+<script setup lang="ts">
+import { RouterLink } from 'vue-router'
+import { routeNames } from '../router/index'
+
+const routerLink = routeNames.todo.path
+</script>
+
 <template>
   <div class="container">
     <div class="Home">
       <h1>Jorge Adanza</h1>
       <p>July 5, 2024</p>
       <button type="button" class="btn btn-outline-success">
-        <RouterLink to="/app">Go To App</RouterLink>
+        <RouterLink :to="routerLink">Go To App</RouterLink>
       </button>
     </div>
   </div>
