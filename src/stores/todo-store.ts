@@ -10,18 +10,18 @@ let id = 0
 export const useTodoStore = defineStore('todoStore', {
   state: () => ({
     todos: [
-      { id: 0, text: 'Clean the House', category: 'Chores' },
-      { id: 1, text: 'Laundry', category: 'Chores' },
-      { id: 2, text: 'Dishes', category: 'Chores' },
-      { id: 3, text: 'Valorant', category: 'Gaming' },
-      { id: 4, text: 'Table Tennis', category: 'Gaming' },
-      { id: 5, text: 'Basketball', category: 'Gaming' }
+      { id: id++, text: 'Clean the House', category: 'Chores', checked: false },
+      { id: id++, text: 'Laundry', category: 'Chores', checked: false },
+      { id: id++, text: 'Dishes', category: 'Chores', checked: false },
+      { id: id++, text: 'Valorant', category: 'Gaming', checked: false },
+      { id: id++, text: 'Table Tennis', category: 'Gaming', checked: false },
+      { id: id++, text: 'Basketball', category: 'Gaming', checked: false }
     ],
     categories: [{ name: 'Chores' }, { name: 'Gaming' }]
   }),
   actions: {
     addTodo(newTodo: string, category: string) {
-      this.todos.push({ id: id++, text: newTodo, category: category })
+      this.todos.push({ id: id++, text: newTodo, category: category, checked: false })
     },
 
     removeTodo(todo: Todo) {
@@ -41,6 +41,7 @@ export const useTodoStore = defineStore('todoStore', {
     },
 
     removeCategory(category: string) {
+      this.todos = this.todos.filter((t) => t.category !== category)
       this.categories = this.categories.filter((c) => c.name !== category)
     }
   }

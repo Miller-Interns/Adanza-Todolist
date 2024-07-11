@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import TodoCategory from '@/components/TodoCategory.vue'
-import CreateCategory from '@/components/CreateCategory.vue'
+import TodoCategory from '@/components/todo-category.vue'
+import CreateCategory from '@/components/create-category.vue'
+import { RouterLink } from 'vue-router'
+import { routeNames } from '../router/index'
+
+const homeViewPath = routeNames.home.path
 </script>
 
 <template>
   <nav class="navbar">
     <div class="backToHomePage">
-      <button><RouterLink to="/">Back to Home Page</RouterLink></button>
+      <button><RouterLink :to="homeViewPath">Back to Home Page</RouterLink></button>
     </div>
     <CreateCategory></CreateCategory>
   </nav>
@@ -28,16 +32,17 @@ h1 {
 }
 
 .backToHomePage {
+  display: flex;
   float: left;
-  justify-content: right;
+  justify-content: left;
+  align-items: left;
 }
 
 .navbar {
   display: flex;
   float: right;
   justify-self: start;
-  justify-content: right;
-  background: black;
+  background: #0275dd;
   width: 100%;
 }
 </style>

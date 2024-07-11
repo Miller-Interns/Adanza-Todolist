@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useTodoStore } from '../stores/TodoStore'
+import { useTodoStore } from '../stores/todo-store'
 import { ref } from 'vue'
 
 const store = useTodoStore()
@@ -11,7 +11,7 @@ function toggleEdit() {
   isEditable.value = !isEditable.value
 }
 
-function toEdit() {
+function submitEdit() {
   store.editTodo(props.todo, newEdit.value)
   toggleEdit()
 }
@@ -20,13 +20,15 @@ function toEdit() {
 <template>
   <div class="todoBlock">
     <div class="blockLeft">
-      <input type="checkbox" />
-      <input v-model="newEdit" type="text" v-if="isEditable" @keyup.enter="toEdit" />
-      <div v-else>{{ props.todo.text }}</div>
+      <input type="checkbox" v-model="$props.todo.checked" />
+      <input v-model="newEdit" type="text" v-if="isEditable" @keyup.enter="submitEdit" />
+      <div v-else>
+        <span :class="{ strikethrough: props.todo.checked }">{{ props.todo.text }}</span>
+      </div>
     </div>
     <div>
       <button class="remove" @click="store.removeTodo(todo)">X</button>
-      <button v-if="isEditable" class="edit" @click="toEdit">submit</button>
+      <button v-if="isEditable" class="edit" @click="submitEdit">submit</button>
       <button v-else class="edit" @click="toggleEdit">✎</button>
     </div>
   </div>
@@ -58,5 +60,9 @@ div {
 
 .blockLeft {
   display: flex;
+}
+
+.strikethrough {
+  text-decoration: line-through;
 }
 </style>
