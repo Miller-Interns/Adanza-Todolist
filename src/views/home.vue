@@ -2,7 +2,7 @@
 import { RouterLink } from 'vue-router'
 import { routeNames } from '../router/index'
 
-const routerLink = routeNames.todo.path
+const todoViewPath = routeNames.todo.path
 </script>
 
 <template>
@@ -11,7 +11,7 @@ const routerLink = routeNames.todo.path
       <h1>Jorge Adanza</h1>
       <p>July 5, 2024</p>
       <button type="button" class="btn btn-outline-success">
-        <RouterLink :to="routerLink">Go To App</RouterLink>
+        <RouterLink :to="todoViewPath">Go To App</RouterLink>
       </button>
     </div>
   </div>

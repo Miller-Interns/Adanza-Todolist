@@ -4,13 +4,13 @@ import CreateCategory from '@/components/create-category.vue'
 import { RouterLink } from 'vue-router'
 import { routeNames } from '../router/index'
 
-const routerLink = routeNames.home.path
+const homeViewPath = routeNames.home.path
 </script>
 
 <template>
   <nav class="navbar">
     <div class="backToHomePage">
-      <button><RouterLink :to="routerLink">Back to Home Page</RouterLink></button>
+      <button><RouterLink :to="homeViewPath">Back to Home Page</RouterLink></button>
     </div>
     <CreateCategory></CreateCategory>
   </nav>
